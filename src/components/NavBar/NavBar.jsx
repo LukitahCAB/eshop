@@ -1,7 +1,7 @@
 import React from "react";
 import NavBarComponents from './NavBarComponents';
 
-const NavBar = ({}) => {
+const NavBar = () => {
 
     return (
 
