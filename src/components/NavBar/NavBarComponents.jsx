@@ -3,19 +3,19 @@ import CartWidget from './Cart/CartWidget';
 
 const logo = <img className="navBar__logo__img" src={require("../../media/img/logo.png")} alt="logo"/>;
 
-const NavBarComponents = () => {
+export default function NavBarComponents () {
 
     return (
         <div>
             <nav>
-                <div class="nav-wrapper deep-purple darken-3">
-                    <a href="index.html" class="brand-logo center">{logo}</a>
-                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <div className="nav-wrapper deep-purple darken-3">
+                    <a href="index.html" className="brand-logo center">{logo}</a>
+                    <ul id="nav-mobile" className="left hide-on-med-and-down">
                         <li><a href="">Constelaciones</a></li>
                         <li><a href="">Galaxias</a></li>
                         <li><a href="">Estrellas</a></li>
                     </ul>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li><a href=""> <CartWidget /> </a></li>
                     </ul>
                 </div>
@@ -24,5 +24,3 @@ const NavBarComponents = () => {
     )
 
 }
-
-export default NavBarComponents;

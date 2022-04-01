@@ -1,57 +1,27 @@
 import React from 'react'
+import ItemCount from './ItemCount';
 
 const tierra = {
-    "nombre"    :   "Planeta Tierra",
-    "imagen"    :   <img className="product__img" src={require("../../../media/img/planetas/tierra.png")} alt="tierra"/>,
-    "precio"    :   500
-
+    nombre    :   "Planeta Tierra",
+    imagen    :   <img className="product__img" src={require("../../../media/img/planetas/tierra.png")} alt="tierra"/>,
+    precio    :   500
 };
 
-const ItemListContainer = () => {
+export default function ItemListContainer () {
     return (
         <div>
 
-            <div class="row">
-                <div class="col s12 m2">
-                    <div class="card orange lighten-5">
-                      <div class="card-image">
+            <div className="row">
+                <div className="col s12 m2">
+                    <div className="card #b39ddb deep-purple lighten-3">
+                      <div className="card-image">
                           {tierra.imagen}
                       </div>
-                      <div class="card-content">
+                      <div className="card-content">
                         <p>{tierra.nombre}</p>
-                        <p>Precio $$$ {tierra.precio}</p>
+                        <p>Precio $ {tierra.precio}</p>
                       </div>
-                      <div class="card-action ">
-                        <a class="waves-effect waves-light btn orange darken-3"><i class="material-icons right tiny ">add_circle</i>Agregar</a>
-                      </div>
-                    </div>
-                </div>
-                <div class="col s12 m2">
-                    <div class="card orange lighten-5">
-                      <div class="card-image">
-                        {tierra.imagen}
-                      </div>
-                      <div class="card-content">
-                        <p>{tierra.nombre}</p>
-                        <p>Precio $$$ {tierra.precio}</p>
-                      </div>
-                      <div class="card-action">
-                      <a class="waves-effect waves-light btn orange darken-3"><i class="material-icons right tiny">add_circle</i>Agregar</a>
-                      </div>
-                    </div>
-                </div>
-                <div class="col s12 m2">
-                    <div class="card orange lighten-5">
-                      <div class="card-image">
-                        {tierra.imagen}
-                      </div>
-                      <div class="card-content">
-                        <p>{tierra.nombre}</p>
-                        <p>Precio $$$ {tierra.precio}</p>
-                      </div>
-                      <div class="card-action">
-                      <a class="waves-effect waves-light btn orange darken-3"><i class="material-icons right tiny">add_circle</i>Agregar</a>
-                      </div>
+                      <ItemCount stock={5} initial={1}/>
                     </div>
                 </div>
             </div>
@@ -59,5 +29,3 @@ const ItemListContainer = () => {
         </div>
     )
 }
-
-export default ItemListContainer;

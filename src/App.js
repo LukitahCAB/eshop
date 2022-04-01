@@ -6,14 +6,14 @@ import ItemListContainer from './components/NavBar/Cart/ItemListContainer';
 
 function App() {
   return (
-    <body>
-      <nav>
+    <div>
+      <div>
         <NavBar />
-      </nav>
-      <main>
+      </div>
+      <div className="center-align">
         <ItemListContainer />
-      </main>
-    </body>
+      </div>
+    </div>
   );
 }
 

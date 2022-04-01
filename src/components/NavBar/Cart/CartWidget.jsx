@@ -1,12 +1,12 @@
 import React from 'react';
 
-const CartWidget = () => {
+export default function CartWidget () {
 
     return (
 
         <div>
-            <a class="waves-effect deep-purple darken-3 btn navBar__cart">
-                <span class="material-icons-outlined">shopping_cart</span>
+            <a className="waves-effect #b39ddb deep-purple darken-4 btn navBar__cart">
+                <span className="material-icons-outlined">shopping_cart</span>
                 Carrito [  ]
             </a>
         </div>
@@ -14,5 +14,3 @@ const CartWidget = () => {
     )
 
 }
-
-export default CartWidget;
