@@ -1,33 +1,40 @@
-import React, {useEffect} from 'react'
-import ItemList from './ItemList'
+import React, { useState, useEffect } from 'react'
+import { getProducts } from '../../Productos'
+// import ItemList from './ItemList'
+import ItemCount from './ItemCount'
 
 export default function ItemListContainer () {
-    useEffect(() =>{
+    const [products, setProducts] = useState([])
 
-        const promise = new Promise((resolve) => {
-
-            console.log('Iniciando carga de productos')
-
-            setTimeout(() =>{
-
-                resolve()
-
-            }
-            ,2500)
+    useEffect(() => {
+        getProducts().then(prods => {
+            setProducts(prods);
+            console.log('Productos cargados correctamente');
         })
+    }, 2000)
 
-        promise.then(()=>{
+    console.log('Iniciando la carga de productos');
 
-            console.log('Productos cargados exitosamente');
-
-        })
-        
-    })
     return (
         <div>
-
-            <ItemList />
-
+            <ul>
+                {products.map(product => 
+                    <div className="row">
+                        <div className="col s12 m2">
+                            <div className="card #b39ddb deep-purple lighten-3">
+                              <div className="card-image">
+                                  {product.imagen}
+                              </div>
+                              <div className="card-content">
+                                <p>{product.nombre}</p>
+                                <p>Precio $ {product.precio}</p>
+                              </div>
+                              <ItemCount stock={5} initial={1}/>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </ul>
         </div>
     )
 }
